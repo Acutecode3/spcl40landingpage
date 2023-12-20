@@ -7,7 +7,7 @@ const ProgrammeDetails = () => {
   return (
     <>
       <span className={styles.detail_heading}>Total Programme Fee</span>
-      <div className="flex-row gap-1 items-center">
+      <div className="flex-row items-center">
         <span className={styles.red_price}>INR 75000</span>
         <span className={styles.green_price}>INR 40000/-</span>
         <span className={styles.grey_text}>{"(All Inclusive)"}</span>
@@ -21,7 +21,9 @@ const ProgrammeDetails = () => {
       </div>
       <Separator />
       <div className="flex-col-mobile gap-1">
-        <span className={styles.small_heading}>Tuition Fee</span>
+        <span className={styles.small_heading}>
+          Tuition Fee {"(Non-Refundable)"}
+        </span>
         <span className={styles.price}>INR 35000/-</span>
       </div>
       <Separator />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "../about.module.sass";
 import cn from "@/lib/cn";
+import Numbers from "./Numbers";
 
 const FaceBehind = () => {
   const logos = [
@@ -19,20 +20,7 @@ const FaceBehind = () => {
         the Big Four firms and several ventures of his own. His other ventures
         include CAPITAIRE, PravasiTax, Fintaxman, and FintaxJob.
       </p>
-      <div className={styles.stat_container}>
-        <div>
-          <div className={styles.stats}>24 years</div>
-          <div className={styles.label}>EXPERIENCE</div>
-        </div>
-        <div>
-          <div className={styles.stats}>80+</div>
-          <div className={styles.label}>CLIENTS</div>
-        </div>
-        <div>
-          <div className={styles.stats}>300+</div>
-          <div className={styles.label}>STUDENTS MENTORED</div>
-        </div>
-      </div>
+      <Numbers />
       <div className={styles.worked_at}>
         <h2 className={styles.worked_heading}>Previously worked at</h2>
         <div className={cn("flex-row justify-between", styles.logos)}>
