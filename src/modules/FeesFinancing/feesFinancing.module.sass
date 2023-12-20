@@ -1,0 +1,121 @@
+@import "@/sass/variables"
+
+.section
+    background: $clr-gray-darkest
+    color: white
+    padding-top: 60px
+    padding-bottom: 60px
+    overflow: hidden
+    @media(min-width: 768px)
+        padding-top: 72px
+        padding-bottom: 72px
+
+.container
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
+    align-items: center
+    gap: 60px
+    overflow: hidden
+    @media(min-width: 1024px)
+        gap: 20px
+        height: 610px
+        flex-direction: row
+
+$image-width: 610px
+$image-width-mobile: 350px
+.carousel
+    width: $image-width-mobile
+    overflow: hidden
+    @media(min-width: 768px)
+        width: $image-width
+
+.slider
+    height: 100%
+    display: flex
+    overflow-x: scroll
+    overflow-y: hidden
+    scroll-snap-type: x mandatory
+    &::-webkit-scrollbar
+        display: none
+
+.slide
+    width: $image-width
+    img
+        width: $image-width-mobile
+        height: 100%
+        object-fit: cover
+        object-position: center
+        @media(min-width: 768px)
+            width: $image-width
+
+.details
+    display: flex
+    width: 100%
+    height: fit-content
+    padding: 30px 15px
+    flex-direction: column
+    align-items: flex-start
+    gap: 19px
+    border-radius: 20px
+    border: 1px solid rgba(255, 255, 255, 0.24)
+    background: linear-gradient(113deg, rgba(255, 255, 255, 0.08) 1.57%, rgba(255, 255, 255, 0.03) 100%)
+    @media (min-width: 1024px)
+        height: 100%
+        padding: 30px 15px
+        justify-content: space-between
+        gap: 0
+        flex: 1
+
+.shieldIcon
+    height: 35px
+    width: 35px
+    min-width: 35px
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 200px
+    border: 1px solid rgba(255, 144, 5, 0.40)
+
+.point
+    color: $clr-gray-light
+    line-height: 22.4px
+
+.small_heading
+    color: $clr-gray-medium
+    font-size: 14px
+    line-height: 16px
+
+.price
+    color: $clr-gray-lighter
+    font-size: 24px
+    font-weight: 800
+    line-height: 25px
+
+.red_price
+    color: #EB5757
+    font-size: 14px
+    line-height: 100%
+    text-decoration: line-through
+    @media (min-width: 768px)
+        font-size: 18px
+
+.green_price
+    color: #219653
+    font-size: 22px
+    font-weight: 700
+    line-height: 100%
+    @media (min-width: 768px)
+        font-size: 26px
+
+.grey_text
+    color: #AAA
+    font-size: 20px
+    line-height: 100%
+    @media (min-width: 768px)
+        font-size: 26px
+
+.detail_heading
+    color: #FFF
+    font-size: 20px
+    line-height: 30px

@@ -1,0 +1,159 @@
+@import "@/sass/variables"
+
+.section
+    background: black
+    background-image: url("/images/form_bg.jpeg")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    padding-top: 100px
+    padding-bottom: 50px
+    gap: 25px
+    @media (min-width: 768px)
+        height: calc(100vh + $nav1Height + $nav2Height)
+        margin-top: calc($nav1Height)
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        flex-direction: row
+
+.sub_heading
+    font-size: 32px
+    font-weight: 700
+    line-height: 120%
+    @media (min-width: 768px)
+        font-size: 44px
+
+.clock
+    gap: 15px
+    padding: 15px 30px
+    border-radius: 4px
+    border: 1px solid #FFF
+    background: linear-gradient(92deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.10) 101.99%)
+    backdrop-filter: blur(27.5px)
+    transition: $transition-medium
+    user-select: none
+    width: 100%
+    @media (min-width: 768px)
+        width: fit-content
+        gap: 30px
+
+.left
+    display: flex
+    flex-direction: column
+    gap: 24px
+    width: 100%
+
+.n
+    color: $clr-accent-shade
+    text-align: center
+    font-size: 28px
+    font-weight: 600
+    line-height: 36px
+    @media (min-width: 768px)
+        font-size: 42px
+
+.d
+    color: #FFF
+    text-align: center
+    font-size: 12px
+    line-height: 24px
+    @media (min-width: 768px)
+        font-size: 16px
+
+.deadline
+    border-left: 6px solid $clr-accent
+    padding: 10px
+    margin-bottom: 20px
+    background: rgba(0, 0, 0, 0.5)
+    @media (min-width: 768px)
+        margin-bottom: 0px
+        background: none
+
+.dh
+    color: #FFF
+    font-size: 24px
+    font-weight: 700
+    line-height: 32px
+
+.dt
+    color: #FFF
+    font-size: 18px
+    font-weight: 500
+    line-height: 20px
+
+.form
+    background: white
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    padding: 23px 24px
+    align-items: center
+    gap: 10px
+    width: 100%
+    height: fit-content
+    @media (min-width: 768px)
+        padding: 43px 44px
+        width: 100%
+    label
+        color: black
+        font-weight: 400
+        line-height: 150%
+        width: 100%
+
+.form_section
+    display: flex
+    flex-direction: column
+    width: 100%
+    input
+        all: unset
+        display: flex
+        padding: 12px
+        align-items: center
+        gap: 8px
+        border-radius: 4px
+        border: 1px solid rgba(0, 0, 0, 0.24)
+        background: var(--White, #FFF)
+
+.form_section_check
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 8px
+    margin: 15px 0
+    width: 100%
+
+.checkbox
+    width: 20px
+    height: 19px
+    border-radius: 4px
+    border: 1px solid var(--Gray-2, #4F4F4F)
+    background: var(--White, #FFF)
+    transition: $transition-medium
+
+.checked
+    background: $clr-accent
+    border: 1px solid $clr-accent-shade
+
+.tag
+    border-radius: 35px
+    background: #FFF
+    display: flex
+    width: fit-content
+    padding: 5px 15px 5px 15px
+    justify-content: center
+    align-items: center
+
+.submit
+    background: $clr-accent
+    color: white
+    font-size: 16px
+    line-height: 150%
+    width: 100%
+    padding: 12px 0
+    text-align: center
+    border-radius: 12px
+    cursor: pointer
+    transition: $transition-medium
+    &:hover
+        background: $clr-accent-light

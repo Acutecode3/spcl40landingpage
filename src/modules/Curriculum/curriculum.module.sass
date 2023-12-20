@@ -1,0 +1,116 @@
+@import "@/sass/variables"
+
+.section
+    background-color: $clr-gray-darker
+    color: white
+    padding-top: 80px
+    padding-bottom: 80px
+
+.content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    width: 90vw
+    gap: 50px
+    @media (min-width: 768px)
+        gap: 100px
+        flex-direction: row
+
+.left
+    top: 100px
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 20px
+    @media (min-width: 768px)
+        position: sticky
+        width: 500px
+
+.text
+    color: $clr-gray-lighter
+    line-height: 150%
+
+.right
+    position: relative
+    width: 100%
+    border-left: 1px solid $clr-gray-lighter
+    padding-left: 30px
+
+.term_container
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin-bottom: 20px
+
+$clr-circle: #D9D9D9
+$clr-acc-heading: #404040
+$clr-acc-heading-hover: #505050
+$clr-acc-content: #343434
+$radius: 3px
+$height: 55px
+
+.circle
+    width: 24px
+    height: 24px
+    border-radius: 50%
+    background: $clr-circle
+    position: absolute
+    left: -42px
+    top: calc( $height / 2 - 12px )
+
+.term
+    padding: 12px 28px
+    width: fit-content
+    border-radius: 5px
+    background: $clr-accent-shade
+    color: black
+
+.accordion
+    width: 100%
+    position: relative
+    margin-bottom: 20px
+
+.accordion_heading
+    height: $height
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 10px
+    background: $clr-acc-heading
+    cursor: pointer
+    border-radius: $radius
+    transition: $transition-medium
+    @media (min-width: 768px)
+        padding-right: 20px
+    &:hover
+        background: $clr-acc-heading-hover
+
+.up
+    transition: $transition-medium
+    transform: rotate(180deg)
+
+.down
+    transition: $transition-medium
+    transform: rotate(0deg)
+
+.accordion_content
+    padding: 20px
+    border-radius: 0px 0px $radius $radius
+    background: $clr-acc-content
+    animation: open 0.3s ease-in-out forwards
+    ul
+        display: flex
+        flex-direction: column
+        gap: 15px
+
+@keyframes open
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+.topic
+    display: flex
+    flex-direction: row
+    gap: 15px

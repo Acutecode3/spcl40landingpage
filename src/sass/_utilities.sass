@@ -1,0 +1,81 @@
+.hidden
+    display: none
+.visible
+    display: block
+
+.hidden-mobile
+    @media (max-width: 768px)
+        display: none
+.visible-mobile
+    @media (min-width: 768px)
+        display: none
+
+.flex-row
+    display: flex
+    flex-direction: row
+.flex-col
+    display: flex
+    flex-direction: column
+.flex-col-mobile
+    display: flex
+    flex-direction: column
+    @media (min-width: 768px)
+        flex-direction: row
+.flex-row-mobile
+    display: flex
+    flex-direction: row
+    @media (min-width: 768px)
+        flex-direction: column
+
+.flex-1
+    flex: 1
+
+.gap-1
+    gap: 1rem
+
+.items-center
+    align-items: center
+
+.justify-center
+    justify-content: center
+
+.justify-between
+    justify-content: space-between
+
+.unset
+    all: unset
+
+.w-full
+    width: 100%
+.w-screen
+    width: 100vw
+.h-full
+    height: 100%
+.h-screen
+    height: 100vh
+
+.text-center
+    text-align: center
+.text-left
+    text-align: left
+.text-right
+    text-align: right
+
+.cursor-pointer
+    cursor: pointer
+
+.relative
+    position: relative
+.absolute
+    position: absolute
+.fixed
+    position: fixed
+
+.bg-red
+    background: red
+
+.uppercase
+    text-transform: uppercase
+
+.bold
+    font-weight: 700

@@ -1,0 +1,64 @@
+@import "@/sass/variables"
+
+.nav
+    position: fixed
+    z-index: 100
+    top: 0
+    width: 100%
+    background: black
+    color: white
+    transition: $transition-slow
+
+.nav1
+    height: $nav1Height
+    padding: 0 15px
+    z-index: 100
+    background: black
+    width: 100%
+    @media (min-width: 768px)
+        padding: 0 50px
+
+.nav1Right
+    gap: 40px
+
+.nav1Buttons
+    display: none
+    @media (min-width: 768px)
+        display: flex
+        gap: 1rem
+
+$gapbwbtns: 1.5rem
+.nav2
+    background: $clr-gray-dark
+    overflow: auto
+    scrollbar-width: none
+    -ms-overflow-style: none
+    display: flex
+    flex-direction: row
+    align-items: center
+    padding: 1rem 15px
+    height: $nav2Height
+    gap: 2rem
+    &::-webkit-scrollbar
+        display: none
+    @media (min-width: 768px)
+        justify-content: center
+    a
+        color: white
+        text-decoration: none
+        transition: $transition
+        white-space: nowrap
+        &:hover
+            color: $clr-accent
+
+.social_links
+    gap: 12px
+
+.link_button
+    color: white
+    text-decoration: none
+    &:hover
+        svg
+            path
+                transition: $transition
+                fill: $clr-accent-light

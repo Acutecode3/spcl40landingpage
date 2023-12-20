@@ -1,0 +1,68 @@
+@import "@/sass/variables"
+
+.pathways
+    background: #000
+    color: #fff
+    padding-top: 40px
+    padding-bottom: 80px
+
+.title
+    color: $clr-gray-lighter
+    font-size: 28px
+    font-weight: 700
+    line-height: 120%
+    @media (min-width: 768px)
+        font-size: 36px
+
+.description
+    color: $clr-gray-medium
+    font-size: 16px
+    font-weight: 400
+    line-height: 125%
+
+.cards
+    display: flex
+    justify-content: space-between
+    gap: 20px
+
+.card
+    display: flex
+    width: calc( 100vw - 30px )
+    padding: 20px 20px 53px 20px
+    flex-direction: column
+    align-items: flex-start
+    gap: 12px
+    border-radius: 24px
+    border: 1px solid rgba(255, 255, 255, 0.20)
+    background: linear-gradient(113deg, rgba(255, 255, 255, 0.18) 1.57%, rgba(255, 255, 255, 0.07) 100%)
+    backdrop-filter: blur(2px)
+    transition: $transition
+    cursor: pointer
+    @media (min-width: 768px)
+        width: 428px
+    &:hover
+        border: 1px solid rgba(255, 144, 5, 0.40)
+        opacity: 0.95
+
+.cardTitle
+    color: white
+    font-size: 22px
+    font-weight: 700
+    line-height: 125%
+
+.cardDescription
+    color: $clr-gray-medium
+    font-family: Outfit
+    line-height: 150%
+
+.cardNumber
+    display: flex
+    padding: 14.5px 16.5px
+    justify-content: center
+    align-items: center
+    border-radius: 12px
+    border: 1px solid rgba(255, 144, 5, 0.40)
+    background: rgba(251, 251, 241, 0.10)
+    color: $clr-accent
+    font-size: 24px
+    font-weight: 700
