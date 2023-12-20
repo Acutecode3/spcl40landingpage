@@ -14,6 +14,11 @@ export const TwoWeeksWorkVideoLink =
 // navbar.ts to update navbar
 // faqs.ts to update faqs
 
+export const markedPrice = "75,000";
+export const discountPrice = "47,200";
+export const admissionFee = "5,000";
+export const tuitionFee = "47,200";
+
 export const fbLink = "https://www.facebook.com/";
 export const igLink = "https://www.instagram.com/";
 export const linkedInLink = "https://www.linkedin.com/in/";
