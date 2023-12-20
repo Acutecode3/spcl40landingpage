@@ -46,7 +46,7 @@ const CareerPathways = () => {
         destination is the same, they choose either of these three paths to
         reach there:
       </div>
-      <div className="flex-col-mobile gap-1">
+      <div className={cn("flex-col-mobile", styles.cards)}>
         {cards.map((card) => {
           return (
             <div className={styles.card} key={card.number}>

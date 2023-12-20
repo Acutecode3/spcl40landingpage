@@ -3,12 +3,13 @@ import SubHeading from "@/components/ui/SubHeading";
 import styles from "./certificate.module.sass";
 import ApplyNow from "../Navbar/components/ApplyNow";
 import DownloadCurriculum from "../Navbar/components/DownloadCurriculum";
+import cn from "@/lib/cn";
 
 const Certificate = () => {
   return (
     <div className={styles.section}>
       <SubHeading blackText="Certificates" stroke={false} size="28px" />
-      <div className={styles.container}>
+      <div className={cn(styles.container, "blue_card")}>
         <Image
           src="/images/certificate.webp"
           width={565}

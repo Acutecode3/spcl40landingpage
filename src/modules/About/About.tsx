@@ -26,7 +26,7 @@ const About = () => {
         </SectionHeading>
       </article>
       <article className={styles.face_behind}>
-        <div className={styles.portrait}>
+        <div className={cn(styles.portrait, "blue_card")}>
           <Image
             src="/images/sreejith_kunyil.png"
             alt="Picture of the author"

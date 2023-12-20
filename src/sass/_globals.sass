@@ -66,10 +66,11 @@ button
             margin-left: 4px
 
 .provide_padding
-    overflow-x: hidden
     padding: 0 15px
     @media(min-width: 768px)
         padding: 0 64px
+    @media(min-width: 1024px)
+        padding: 0 96px
 
 .sub-heading
     font-weight: 700
@@ -140,3 +141,15 @@ body
     margin-bottom: 1.5rem
     @media (min-width: 768px)
         font-size: 32px
+
+.blue_card
+    width: 100%
+    background-color: $clr-blue-light
+    background-image: url($noise-location)
+    background-size: contain
+    transition: $transition-medium
+    overflow: clip
+    &:hover
+        background: $clr-blue-medium
+        background-image: url($noise-location)
+        background-size: contain
