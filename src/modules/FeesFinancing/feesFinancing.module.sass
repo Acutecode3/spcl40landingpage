@@ -27,6 +27,8 @@ $image-width-mobile: 350px
 .carousel
     width: $image-width-mobile
     overflow: hidden
+    height: 100%
+    position: relative
     @media(min-width: 768px)
         width: $image-width
 
@@ -42,7 +44,7 @@ $image-width-mobile: 350px
 .slide
     width: $image-width
     img
-        width: $image-width-mobile
+        width: auto
         height: 100%
         object-fit: cover
         object-position: center
@@ -121,3 +123,8 @@ $image-width-mobile: 350px
     color: #FFF
     font-size: 20px
     line-height: 30px
+
+.controls
+    position: absolute
+    bottom: 0
+    z-index: 5

@@ -1,10 +1,15 @@
+"use client";
+
+import { useRef } from "react";
 import SubHeading from "@/components/ui/SubHeading";
 import styles from "./feesFinancing.module.sass";
 import cn from "@/lib/cn";
 import Image from "next/image";
 import ProgrammeDetails from "./components/ProgrammeDetails";
+import LeftArrow from "./components/Arrow";
 
 const FeesFinancing = () => {
+  const slideRef = useRef<HTMLDivElement>(null);
   return (
     <section
       className={cn("provide_padding", styles.section)}
@@ -19,8 +24,12 @@ const FeesFinancing = () => {
       />
       <div className={styles.container}>
         <div className={styles.carousel}>
+          <div className={styles.controls}>
+            <LeftArrow />
+            <LeftArrow isRight />
+          </div>
           <div className={styles.slider}>
-            <div className={styles.slide}>
+            <div className={styles.slide} ref={slideRef}>
               <Image
                 src="/images/certificate.webp"
                 alt="slide1"

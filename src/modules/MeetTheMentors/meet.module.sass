@@ -1,6 +1,7 @@
 @import "@/sass/variables"
 $videos_gap: 25px
-$padding_left: 1rem
+$padding: 1rem
+$padding_left: 60px
 
 .meet_mentors
     margin-bottom: 80px
@@ -42,7 +43,7 @@ $padding_left: 1rem
         width: 362px
 
 .subtitle
-    width: calc( 100% - $padding_left * 2 )
+    width: calc( 100% - $padding * 2 )
 
 .name
     color: $clr-gray-darkest
@@ -69,13 +70,17 @@ $padding_left: 1rem
     height: 100%
     background: transparent
     padding-right: 95vw
+    padding-left: $padding_left
     -ms-overflow-style: none
     scrollbar-width: none
     transition: all 0.2s ease-in-out
     white-space: nowrap
-    @media (max-width: 768px)
-        padding: $padding_left 0
-        padding-right: $padding_left
+    @media (max-width: 1024px)
+        gap: 40px
+    @media (max-width: 767px)
+        padding: $padding 0
+        padding-right: $padding
+        padding-left: 0
         gap: 0
     &::-webkit-scrollbar
         display: none
@@ -132,8 +137,8 @@ $padding_left: 1rem
     justify-content: space-between
     padding-right: 2rem
     gap: 1rem
+    padding: 2rem $padding_left
     @media (max-width: 768px)
-        padding-right: $padding_left
         display: none
     .shifters
         display: flex
