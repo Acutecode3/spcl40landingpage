@@ -28,6 +28,10 @@ const Number = (props: Props) => {
   };
 
   useEffect(() => {
+    const cleanup = () => {
+      if (countingRef.current) observer.unobserve(countingRef.current);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -42,9 +46,6 @@ const Number = (props: Props) => {
       observer.observe(countingRef.current);
     }
 
-    const cleanup = () => {
-      if (countingRef.current) observer.unobserve(countingRef.current);
-    };
     return cleanup;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [countingRef.current]);

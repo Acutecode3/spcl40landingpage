@@ -8,13 +8,15 @@ import dynamic from "next/dynamic";
 
 const Testimonials = () => {
   return (
-    <section className={cn("provide_padding", styles.testimonials)}>
-      <SubHeading
-        blackText="Hear it from our"
-        yellowText="students"
-        stroke={false}
-        size="28px"
-      />
+    <section className={styles.testimonials}>
+      <div className="provide_padding">
+        <SubHeading
+          blackText="Hear it from our"
+          yellowText="students"
+          stroke={false}
+          size="28px"
+        />
+      </div>
       <Carousel />
     </section>
   );
