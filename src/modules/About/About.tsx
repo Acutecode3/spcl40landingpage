@@ -6,7 +6,6 @@ import ApplyNow from "../Navbar/components/ApplyNow";
 import Story from "./components/Story";
 import FaceBehind from "./components/FaceBehind";
 import GlassName from "./components/GlassName";
-import { useNavbarContext } from "@/contexts/ActiveNavbarContext";
 import SectionLayouts from "@/components/SectionLayouts";
 
 const About = () => {
@@ -15,8 +14,8 @@ const About = () => {
       <div className={styles.black}></div>
       <div className={styles.image_container}>
         <Image
-          src="/images/about_image.png"
-          alt="Picture of the author"
+          src="/images/special40.gif"
+          alt="Special40 gif"
           width={1095}
           height={500}
         />

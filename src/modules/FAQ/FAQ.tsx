@@ -1,4 +1,3 @@
-import cn from "@/lib/cn";
 import styles from "./faq.module.sass";
 import Question from "./components/Question";
 import ApplyNow from "../Navbar/components/ApplyNow";

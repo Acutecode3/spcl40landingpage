@@ -1,4 +1,3 @@
-import cn from "@/lib/cn";
 import styles from "./workcamp.module.sass";
 import SubHeading from "@/components/ui/SubHeading";
 import IntroVideo from "../HomeHero/components/IntroVideo";

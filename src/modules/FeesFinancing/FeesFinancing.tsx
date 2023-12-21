@@ -3,12 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import SubHeading from "@/components/ui/SubHeading";
 import styles from "./feesFinancing.module.sass";
-import cn from "@/lib/cn";
 import Image from "next/image";
 import ProgrammeDetails from "./components/ProgrammeDetails";
 import LeftArrow from "./components/Arrow";
-import { feesFinancingImages } from "@/lib/data/data";
 import SectionLayouts from "@/components/SectionLayouts";
+import { feesFinancingImages } from "@/lib/data/feesNdFinancing";
 
 const FeesFinancing = () => {
   const slideRef = useRef<HTMLDivElement>(null);
@@ -57,7 +56,7 @@ const FeesFinancing = () => {
             {feesFinancingImages.map((img, i) => (
               <div key={i} className={styles.slide} ref={slideRef}>
                 {img && (
-                  <Image src={img} alt="Special40" height={610} width={500} />
+                  <Image src={img} alt="Special40" height={815} width={642} />
                 )}
               </div>
             ))}

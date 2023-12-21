@@ -1,6 +1,5 @@
 "use client";
 
-import cn from "@/lib/cn";
 import styles from "./testimonials.module.sass";
 import SubHeading from "@/components/ui/SubHeading";
 import Carousel from "./Carousel/Carousel";

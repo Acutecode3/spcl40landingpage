@@ -32,11 +32,6 @@ export const addrLine3 = "Kerala - 682019";
 export const curriculumLink = process.env.NEXT_PUBLIC_CURRICULUM_LINK || "";
 // eg: https://drive.google.com/file/d/some-id/view?usp=sharing
 
-export const feesFinancingImages = [
-  "/images/about_image.png",
-  "/images/form_bg.jpeg",
-];
-
 export const testimonialVideos = [
   "https://youtube.com/shorts/5Y7L-uxI-vI",
   "https://www.youtube.com/watch?v=EGq8pzGvdmE",

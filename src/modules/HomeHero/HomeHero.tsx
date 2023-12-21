@@ -1,4 +1,3 @@
-import cn from "@/lib/cn";
 import ApplyNow from "../Navbar/components/ApplyNow";
 import DownloadCurriculum from "../Navbar/components/DownloadCurriculum";
 import styles from "./home-hero.module.sass";
