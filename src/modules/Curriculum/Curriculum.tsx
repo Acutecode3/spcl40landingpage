@@ -7,18 +7,11 @@ import ApplyNow from "../Navbar/components/ApplyNow";
 import DownloadCurriculum from "../Navbar/components/DownloadCurriculum";
 import AccordionComponent from "./components/AccordionComponent";
 import { CurriculumDetails } from "@/lib/data/curriculum";
+import SectionLayouts from "@/components/SectionLayouts";
 
 const Curriculum = () => {
-  const topics = [
-    "Introduction to Accounting",
-    "Accounting Equation",
-    "Journal Entries",
-    "Ledger",
-    "Trial Balance",
-    "Financial Statements",
-  ];
   return (
-    <section className={cn("provide_padding", styles.section)} id="journey">
+    <SectionLayouts id="journey" className={styles.section} providePadding>
       <SubHeading
         whiteText="Meet the"
         yellowText="mentors"
@@ -52,7 +45,7 @@ const Curriculum = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionLayouts>
   );
 };
 

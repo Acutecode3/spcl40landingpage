@@ -1,10 +1,15 @@
 import styles from "./meet.module.sass";
 import SubHeading from "@/components/ui/SubHeading";
 import Carousel from "./components/Carousel";
+import SectionLayouts from "@/components/SectionLayouts";
 
 const MeetTheMentors = () => {
   return (
-    <section className={styles.meet_mentors} id="mentors">
+    <SectionLayouts
+      className={styles.meet_mentors}
+      id="mentors"
+      providePadding={false}
+    >
       <div className="provide_padding">
         <SubHeading
           blackText="Meet the"
@@ -14,7 +19,7 @@ const MeetTheMentors = () => {
         />
       </div>
       <Carousel />
-    </section>
+    </SectionLayouts>
   );
 };
 

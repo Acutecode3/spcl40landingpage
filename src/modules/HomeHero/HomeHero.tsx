@@ -7,6 +7,7 @@ import CardIcon from "./components/CardIcon";
 import { Cohort, Duration, Format, Mode } from "./components/Icons";
 import IntroVideo from "./components/IntroVideo";
 import { HomeHeroVideoLink } from "@/lib/data/data";
+import SectionLayouts from "@/components/SectionLayouts";
 
 type Props = {
   showHero?: boolean;
@@ -15,7 +16,7 @@ type Props = {
 
 const HomeHero = (props: Props) => {
   return (
-    <section className={cn("provide_padding", styles.section)} id="highlights">
+    <SectionLayouts className={styles.section} id="highlights" providePadding>
       {props.showHero && (
         <div className={styles.top_section}>
           <div className={styles.section1}>
@@ -36,7 +37,7 @@ const HomeHero = (props: Props) => {
           <CardIcon heading="cohort" text="January 20, 2024" Icon={Cohort} />
         </div>
       )}
-    </section>
+    </SectionLayouts>
   );
 };
 

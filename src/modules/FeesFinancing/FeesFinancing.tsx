@@ -8,6 +8,7 @@ import Image from "next/image";
 import ProgrammeDetails from "./components/ProgrammeDetails";
 import LeftArrow from "./components/Arrow";
 import { feesFinancingImages } from "@/lib/data/data";
+import SectionLayouts from "@/components/SectionLayouts";
 
 const FeesFinancing = () => {
   const slideRef = useRef<HTMLDivElement>(null);
@@ -34,9 +35,10 @@ const FeesFinancing = () => {
   }, [index]);
 
   return (
-    <section
-      className={cn("provide_padding", styles.section)}
+    <SectionLayouts
+      className={styles.section}
       id="fees-and-finance"
+      providePadding
     >
       <SubHeading
         blackText=""
@@ -65,7 +67,7 @@ const FeesFinancing = () => {
           <ProgrammeDetails />
         </div>
       </div>
-    </section>
+    </SectionLayouts>
   );
 };
 

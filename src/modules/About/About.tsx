@@ -6,10 +6,12 @@ import ApplyNow from "../Navbar/components/ApplyNow";
 import Story from "./components/Story";
 import FaceBehind from "./components/FaceBehind";
 import GlassName from "./components/GlassName";
+import { useNavbarContext } from "@/contexts/ActiveNavbarContext";
+import SectionLayouts from "@/components/SectionLayouts";
 
 const About = () => {
   return (
-    <section className={cn("provide_padding", styles.section)} id="about">
+    <SectionLayouts id="about" className={styles.section} providePadding>
       <div className={styles.black}></div>
       <div className={styles.image_container}>
         <Image
@@ -42,7 +44,7 @@ const About = () => {
           <FaceBehind />
         </SectionHeading>
       </article>
-    </section>
+    </SectionLayouts>
   );
 };
 

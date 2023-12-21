@@ -5,6 +5,7 @@ import Fonts from "@/lib/Fonts";
 import { ChildrenProps } from "@/types/common.types";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
+import ActiveNavbarProvider from "@/contexts/ActiveNavbarContext";
 
 export const metadata: Metadata = {
   title: "Special 40 - Curated for corporates.",
@@ -19,7 +20,7 @@ export default function RootLayout(props: ChildrenProps) {
       </head>
       <body style={{ fontFamily: "'Outfit', sans-serif" }}>
         <Toaster position="top-right" reverseOrder={false} />
-        {props.children}
+        <ActiveNavbarProvider>{props.children}</ActiveNavbarProvider>
       </body>
     </html>
   );

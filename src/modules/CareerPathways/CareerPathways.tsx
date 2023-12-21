@@ -1,15 +1,14 @@
 import cn from "@/lib/cn";
 import styles from "./career-pathways.module.sass";
 import { careerPathwaysData } from "@/lib/data/careerPathways";
+import SectionLayouts from "@/components/SectionLayouts";
 
 const CareerPathways = () => {
   return (
-    <section
-      className={cn(
-        "provide_padding flex-col justify-center gap-1",
-        styles.pathways
-      )}
+    <SectionLayouts
       id="career-path"
+      className={cn(styles.pathways, " flex-col justify-center gap-1")}
+      providePadding
     >
       <div className={styles.title}>Career Pathways</div>
       <div className={styles.description}>
@@ -30,7 +29,7 @@ const CareerPathways = () => {
           );
         })}
       </div>
-    </section>
+    </SectionLayouts>
   );
 };
 

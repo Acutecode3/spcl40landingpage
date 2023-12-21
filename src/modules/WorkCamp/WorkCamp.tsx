@@ -4,10 +4,11 @@ import SubHeading from "@/components/ui/SubHeading";
 import IntroVideo from "../HomeHero/components/IntroVideo";
 import ApplyNow from "../Navbar/components/ApplyNow";
 import { TwoWeeksWorkVideoLink } from "@/lib/data/data";
+import SectionLayouts from "@/components/SectionLayouts";
 
 const WorkCamp = () => {
   return (
-    <section className={cn("provide_padding", styles.section)}>
+    <SectionLayouts className={styles.section} id="work-camp" providePadding>
       <div className={styles.section1}>
         <SubHeading
           stroke
@@ -25,7 +26,7 @@ const WorkCamp = () => {
         <ApplyNow text="Enroll Now" />
       </div>
       <IntroVideo link={TwoWeeksWorkVideoLink} />
-    </section>
+    </SectionLayouts>
   );
 };
 

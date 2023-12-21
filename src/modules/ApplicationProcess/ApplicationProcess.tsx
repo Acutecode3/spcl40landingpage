@@ -1,12 +1,14 @@
 import cn from "@/lib/cn";
 import styles from "./applicationProcess.module.sass";
 import { applicationProcess } from "@/lib/data/applicationProcess";
+import SectionLayouts from "@/components/SectionLayouts";
 
 const ApplicationProcess = () => {
   return (
-    <section
-      className={cn("provide_padding", styles.section)}
+    <SectionLayouts
       id="application-process"
+      className={styles.section}
+      providePadding
     >
       <h1 className="white_text">
         <span>Application</span>{" "}
@@ -23,7 +25,7 @@ const ApplicationProcess = () => {
           );
         })}
       </div>
-    </section>
+    </SectionLayouts>
   );
 };
 

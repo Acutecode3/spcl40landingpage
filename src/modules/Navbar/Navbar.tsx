@@ -15,6 +15,7 @@ import {
   thanksPageNavbar,
 } from "@/lib/data/navbar";
 import Link from "next/link";
+import { useNavbarContext } from "@/contexts/ActiveNavbarContext";
 
 type Props = {
   page: "home" | "form" | "thank-you";
@@ -54,6 +55,8 @@ const Navbar = (props: Props) => {
     };
   }, []);
 
+  const { activeSection } = useNavbarContext();
+
   let links: NavLinksType = [];
   if (props.page === "home") links = homeNavbar;
   else if (props.page === "form") links = formPageNavbar;
@@ -79,7 +82,7 @@ const Navbar = (props: Props) => {
         </div>
       </div>
       <div className={styles.nav2}>
-        <NavLinks links={links} />
+        <NavLinks links={links} activeSection={activeSection} />
       </div>
     </nav>
   );
