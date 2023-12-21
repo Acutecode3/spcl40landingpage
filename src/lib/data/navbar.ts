@@ -26,3 +26,5 @@ export const formPageNavbar = [
   new Link("#application-process", "Application Process"),
   new Link("#faq", "FAQ"),
 ];
+
+export const thanksPageNavbar = [new Link("/", "Go home")];

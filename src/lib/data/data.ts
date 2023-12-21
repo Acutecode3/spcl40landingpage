@@ -5,7 +5,7 @@ export const countDownDate =
 
 // HOME PAGE
 export const HomeHeroVideoLink =
-  "https://www.youtube.com/embed/Bc3ujbbeTyk?si=PaJcMUrFfwWFmahM";
+  "https://www.youtube.com/embed/PSJCjBVlmLg?si=oLIMWvu5fn0pVUBm";
 export const TwoWeeksWorkVideoLink =
   "https://www.youtube.com/embed/Bc3ujbbeTyk?si=PaJcMUrFfwWFmahM";
 

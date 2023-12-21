@@ -54,7 +54,7 @@ button
     background: $clr-accent-light
     color: $clr-gray
     white-space: nowrap
-    width: 110px
+    width: fit-content
     .apply_now_arrow
         transition: $transition-medium
         width: 0
@@ -163,3 +163,10 @@ body
     align-items: center
     justify-content: center
     cursor: pointer
+
+.thankyou-text
+    color: white
+    font-size: 18px
+    line-height: 150%
+    @media (min-width: 768px)
+        width: 50%

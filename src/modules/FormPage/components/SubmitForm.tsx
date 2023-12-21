@@ -6,10 +6,13 @@ import { useState } from "react";
 import Tick from "./Tick";
 import { toastError, toastSuccess } from "@/lib/toast";
 import { checkData } from "../helpers/checkData";
+import { useRouter } from "next/navigation";
 
 const SubmitForm = () => {
+  const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const toggleCheck = () => setIsChecked(!isChecked);
+  const [buttonText, setButtonText] = useState("Enroll Now");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,12 +27,14 @@ const SubmitForm = () => {
     };
 
     if (!checkData(details)) return;
-
     try {
       // send details to backend
       toastSuccess("Your details have been submitted!");
+      router.push("/thank-you");
     } catch (err: any) {
       toastError(err.message || "Something went wrong!");
+    } finally {
+      setButtonText("Enroll Now");
     }
   };
   return (
@@ -48,7 +53,7 @@ const SubmitForm = () => {
       </div>
       <div className={styles.form_section}>
         <label htmlFor="g_name">Guardian{"'"}s Name*</label>
-        <input type="text" id="g_name" inputMode="numeric" />
+        <input type="text" id="g_name" />
       </div>
       <div className={styles.form_section}>
         <label htmlFor="g_phone">Guardian{"'"}s Phone Number*</label>
@@ -72,7 +77,7 @@ const SubmitForm = () => {
         </label>
       </div>
       <button className={styles.submit} type="submit">
-        Enroll Now
+        {buttonText}
       </button>
     </form>
   );

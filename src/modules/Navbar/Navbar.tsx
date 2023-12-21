@@ -8,11 +8,16 @@ import ApplyNow from "./components/ApplyNow";
 import Image from "next/image";
 import NavLinks from "./components/NavLinks";
 import SocialIcons from "./components/SocialIcons";
-import { formPageNavbar, homeNavbar } from "@/lib/data/navbar";
+import {
+  NavLinksType,
+  formPageNavbar,
+  homeNavbar,
+  thanksPageNavbar,
+} from "@/lib/data/navbar";
 import Link from "next/link";
 
 type Props = {
-  page: "home" | "form";
+  page: "home" | "form" | "thank-you";
 };
 const Navbar = (props: Props) => {
   const navRef = useRef<HTMLDivElement>(null);
@@ -49,6 +54,10 @@ const Navbar = (props: Props) => {
     };
   }, []);
 
+  let links: NavLinksType = [];
+  if (props.page === "home") links = homeNavbar;
+  else if (props.page === "form") links = formPageNavbar;
+  else if (props.page === "thank-you") links = thanksPageNavbar;
   return (
     <nav className={cn("flex-col", styles.nav)} ref={navRef}>
       <div className={cn("flex-row items-center justify-between", styles.nav1)}>
@@ -65,12 +74,12 @@ const Navbar = (props: Props) => {
           <SocialIcons />
           <div className={styles.nav1Buttons}>
             <DownloadCurriculum />
-            <ApplyNow />
+            {props.page === "home" && <ApplyNow />}
           </div>
         </div>
       </div>
       <div className={styles.nav2}>
-        <NavLinks links={props.page === "home" ? homeNavbar : formPageNavbar} />
+        <NavLinks links={links} />
       </div>
     </nav>
   );

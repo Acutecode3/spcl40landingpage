@@ -4,6 +4,7 @@ import "@/sass/_utilities.sass";
 import Fonts from "@/lib/Fonts";
 import { ChildrenProps } from "@/types/common.types";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Special 40 - Curated for corporates.",
@@ -17,6 +18,7 @@ export default function RootLayout(props: ChildrenProps) {
         <Fonts />
       </head>
       <body style={{ fontFamily: "'Outfit', sans-serif" }}>
+        <Toaster position="top-right" reverseOrder={false} />
         {props.children}
       </body>
     </html>
