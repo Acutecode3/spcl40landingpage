@@ -63,7 +63,7 @@ const EachVideo = (props: Props) => {
       >
         <CustomPlayer />
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=zElQWXVFb4Y"
+          url={props.link}
           playing={isPlaying}
           height={isMobile ? 553 : 422}
           width={isMobile ? 310 : 236}

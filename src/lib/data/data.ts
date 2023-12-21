@@ -32,3 +32,23 @@ export const addrLine3 = "Kerala - 682019";
 
 export const curriculumLink = process.env.NEXT_PUBLIC_CURRICULUM_LINK || "";
 // eg: https://drive.google.com/file/d/some-id/view?usp=sharing
+
+export const feesFinancingImages = [
+  "/images/about_image.png",
+  "/images/form_bg.jpeg",
+];
+
+export const testimonialVideos = [
+  "https://www.youtube.com/embed/8GMrOrGQcp0",
+  "https://www.youtube.com/watch?v=zElQWXVFb4Y",
+  "https://www.youtube.com/watch?v=cv6Z30h1VxY",
+  "https://www.youtube.com/watch?v=ldrgpN-TOEU",
+  "https://www.youtube.com/watch?v=_G9zvnwE2WQ",
+  "https://www.youtube.com/watch?v=iSU1q13aZ68",
+  "https://www.youtube.com/watch?v=iEHtuFvwx7A",
+  "https://www.youtube.com/watch?v=eCXE_VFSfLA",
+  "https://www.youtube.com/watch?v=jtj_H2bgBqE",
+  "https://www.youtube.com/watch?v=7l2ULIW4IIw",
+  "https://www.youtube.com/watch?v=VyiDHNtf3-M",
+  "https://www.youtube.com/watch?v=qx6MGTp8z3U",
+];

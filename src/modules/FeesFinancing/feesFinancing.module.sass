@@ -16,7 +16,6 @@
     justify-content: center
     align-items: center
     gap: 60px
-    overflow: hidden
     @media(min-width: 1024px)
         gap: 20px
         height: 610px
@@ -26,7 +25,6 @@ $image-width: 610px
 $image-width-mobile: 350px
 .carousel
     width: $image-width-mobile
-    overflow: hidden
     height: 100%
     position: relative
     @media(min-width: 768px)
@@ -42,7 +40,11 @@ $image-width-mobile: 350px
         display: none
 
 .slide
-    width: $image-width
+    min-width: $image-width-mobile
+    border-radius: 20px
+    overflow: hidden
+    @media(min-width: 768px)
+        min-width: $image-width
     img
         width: auto
         height: 100%
@@ -58,13 +60,13 @@ $image-width-mobile: 350px
     padding: 20px 12px
     flex-direction: column
     align-items: flex-start
-    gap: 19px
+    gap: 18px
     border-radius: 20px
     border: 1px solid rgba(255, 255, 255, 0.24)
     background: linear-gradient(113deg, rgba(255, 255, 255, 0.08) 1.57%, rgba(255, 255, 255, 0.03) 100%)
     @media (min-width: 1024px)
         height: 100%
-        padding: 30px 15px
+        padding: 15px
         justify-content: space-between
         gap: 0
         flex: 1
@@ -82,6 +84,7 @@ $image-width-mobile: 350px
 .point
     color: $clr-gray-light
     line-height: 22.4px
+    font-size: 15.5px
 
 .small_heading
     color: $clr-gray-medium
@@ -126,5 +129,8 @@ $image-width-mobile: 350px
 
 .controls
     position: absolute
-    bottom: 0
-    z-index: 5
+    top: 50%
+    width: calc( 100% + 50px )
+    transform: translate(-25px, -50%)
+    display: flex
+    justify-content: space-between

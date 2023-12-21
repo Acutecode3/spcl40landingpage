@@ -5,12 +5,13 @@ import EachVideo from "./EachVideo";
 import Indicator from "./Indicator";
 import styles from "./carousel.module.sass";
 import { LeftArrow, RightArrow } from "./Icons/Arrows";
+import { testimonialVideos } from "@/lib/data/data";
 
 const Carousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
   const gap = 25; // 25px in css
-  const count = 8; // number of videos
+  const count = testimonialVideos.length; // number of videos
 
   // each video width finding using useRef
   const [width, setWidth] = useState<number>(0);
@@ -79,16 +80,14 @@ const Carousel = () => {
     <>
       <div className="relative">
         <div className={styles.videos} onScroll={handleScroll} ref={scrollRef}>
-          {Array.from({ length: count }).map((_, i) => (
+          {testimonialVideos.map((link, i) => (
             <EachVideo
               key={i}
               index={i}
+              link={link}
               videoRef={videoRef}
               currentlyPlaying={currentlyPlaying}
               setCurrentlyPlaying={setCurrentlyPlaying}
-              link={
-                "https://www.youtube.com/embed/zElQWXVFb4Y?si=0-a-9Dz7vkygR1o6&amp;controls=0"
-              }
             />
           ))}
         </div>

@@ -1,15 +1,38 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SubHeading from "@/components/ui/SubHeading";
 import styles from "./feesFinancing.module.sass";
 import cn from "@/lib/cn";
 import Image from "next/image";
 import ProgrammeDetails from "./components/ProgrammeDetails";
 import LeftArrow from "./components/Arrow";
+import { feesFinancingImages } from "@/lib/data/data";
 
 const FeesFinancing = () => {
   const slideRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(0);
+  const count = feesFinancingImages.length;
+  const goLeft = () => {
+    const prevIndex = index === 0 ? count - 1 : index - 1;
+    setIndex(prevIndex);
+  };
+  const goRight = () => {
+    const nextIndex = index === count - 1 ? 0 : index + 1;
+    setIndex(nextIndex);
+  };
+
+  useEffect(() => {
+    if (slideRef.current && sliderRef.current) {
+      const slideWidth = slideRef.current.offsetWidth;
+      sliderRef.current.scrollTo({
+        left: slideWidth * index,
+        behavior: "smooth",
+      });
+    }
+  }, [index]);
+
   return (
     <section
       className={cn("provide_padding", styles.section)}
@@ -25,26 +48,17 @@ const FeesFinancing = () => {
       <div className={styles.container}>
         <div className={styles.carousel}>
           <div className={styles.controls}>
-            <LeftArrow />
-            <LeftArrow isRight />
+            <LeftArrow onClick={goLeft} />
+            <LeftArrow isRight onClick={goRight} />
           </div>
-          <div className={styles.slider}>
-            <div className={styles.slide} ref={slideRef}>
-              <Image
-                src="/images/certificate.webp"
-                alt="slide1"
-                height={610}
-                width={500}
-              />
-            </div>
-            <div className={styles.slide}>
-              <Image
-                src="/images/certificate.webp"
-                alt="slide2"
-                height={610}
-                width={500}
-              />
-            </div>
+          <div className={styles.slider} ref={sliderRef}>
+            {feesFinancingImages.map((img, i) => (
+              <div key={i} className={styles.slide} ref={slideRef}>
+                {img && (
+                  <Image src={img} alt="Special40" height={610} width={500} />
+                )}
+              </div>
+            ))}
           </div>
         </div>
         <div className={styles.details}>

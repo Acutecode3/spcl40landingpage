@@ -19,7 +19,7 @@ export const mentors = [
     "#B2DFDC"
   ),
   new Mentor(
-    "Anjaly S Reji",
+    "Anjaly Elsa Reji",
     "Chartered Accountant",
     "/images/mentors/1.webp",
     "#C0DFB2"
@@ -37,7 +37,7 @@ export const mentors = [
     "#B2DFDC"
   ),
   new Mentor(
-    "Anjaly S Reji",
+    "Anjaly Elsa Reji",
     "Chartered Accountant",
     "/images/mentors/1.webp",
     "#C0DFB2"

@@ -8,6 +8,7 @@ import {
   markedPrice,
   tuitionFee,
 } from "@/lib/data/data";
+import { CardPoints } from "@/lib/data/feesNdFinancing";
 
 const ProgrammeDetails = () => {
   return (
@@ -33,11 +34,9 @@ const ProgrammeDetails = () => {
         <span className={styles.price}>INR {tuitionFee}/-</span>
       </div>
       <Separator />
-      <Point text="Two weeks of office training (“Tax Camp”) where students will work on actual client files and their accounts." />
-      <Point text="Interview training, soft skills development, and mock interviews" />
-      <Point text="Placement assistance" />
-      <Point text="Access lifelong membership in the Special 40 Alumni Community for continuous career support, job updates, and mutual assistance." />
-      <Point text="Unrestricted access to Special 40 faculty for insights or advice to resolve speedbumps at work or in their careers at any time." />
+      {CardPoints.map((point, index) => (
+        <Point key={index} text={point} />
+      ))}
       <ApplyNow />
     </>
   );

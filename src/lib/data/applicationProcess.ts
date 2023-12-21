@@ -28,6 +28,6 @@ export const applicationProcess: Process[] = [
   new Process(
     4,
     "Acceptance",
-    "Achieve success in all test segments to gain entry into the program, with enrollment confirmed after the admission fee is paid."
+    "Achieve success in all test segments to gain entry into the program, where enrollment confirmed after the admission fee is paid."
   ),
 ];

@@ -13,7 +13,7 @@ const WorkCamp = () => {
           stroke
           size="26px"
           blackText="Two-week"
-          yellowText="Work Camp"
+          yellowText="FinTax Camp"
         />
         <p className={styles.text}>
           Our programme includes a two-week office training segment that
