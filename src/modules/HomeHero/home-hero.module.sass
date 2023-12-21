@@ -18,13 +18,13 @@
     display: flex
     flex-direction: column
     gap: 36px
-    position: relative
     @media(min-width: 768px)
         padding-top: calc( $nav1Height + $nav2Height + 100px )
         display: grid
         grid-template-columns: 1fr 1fr
         justify-content: space-between
         padding-bottom: 64px
+        position: relative
     @media(min-width: 1048px)
         padding-bottom: 0
 
@@ -50,7 +50,11 @@
         font-weight: 900
         line-height: 120%
         @media(min-width: 768px)
-            font-size: 48px
+            font-size: 40px
+        @media(min-width: 1048px)
+            font-size: 36px
+        @media(min-width: 1248px)
+            font-size: 40px
     .ascent
         color: $clr-blue
     p

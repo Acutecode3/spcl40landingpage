@@ -6,13 +6,28 @@ import { useState } from "react";
 import Tick from "./Tick";
 import { toastError, toastSuccess } from "@/lib/toast";
 import { checkData } from "../helpers/checkData";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { curriculumLink } from "@/lib/data/data";
+
+const handleDownload = () => {
+  if (typeof window === "undefined") return;
+  const downloadLink = document.createElement("a");
+  downloadLink.target = "_blank";
+  downloadLink.href = curriculumLink;
+  downloadLink.download = "curriculum.pdf";
+  setTimeout(() => {
+    downloadLink.click();
+  }, 2000);
+};
 
 const SubmitForm = () => {
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const toggleCheck = () => setIsChecked(!isChecked);
   const [buttonText, setButtonText] = useState("Enroll Now");
+
+  const searchParams = useSearchParams();
+  const toDownload = searchParams.get("download_curriculum");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,12 +40,16 @@ const SubmitForm = () => {
       guardian_name: e.currentTarget.g_name.value,
       guardian_phone: e.currentTarget.g_phone.value,
     };
-
     if (!checkData(details)) return;
+
     try {
       // send details to backend
-      toastSuccess("Your details have been submitted!");
+
+      // on success
       router.push("/thank-you");
+      toastSuccess("Your details have been submitted!");
+      // if curriculum download is requested
+      if (toDownload) handleDownload();
     } catch (err: any) {
       toastError(err.message || "Something went wrong!");
     } finally {

@@ -32,8 +32,8 @@ const About = () => {
           <Image
             src="/images/sreejith_kunyil.png"
             alt="Picture of the author"
-            width={500}
-            height={500}
+            width={700}
+            height={574}
           />
           <GlassName />
         </div>

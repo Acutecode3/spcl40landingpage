@@ -15,37 +15,43 @@ export const mentors = [
   new Mentor(
     "Harshin Valamary",
     "Chartered Accountant",
-    "/images/mentors/2.webp",
+    "/images/mentors/1.png",
     "#B2DFDC"
   ),
   new Mentor(
     "Anjaly Elsa Reji",
     "Chartered Accountant",
-    "/images/mentors/1.webp",
+    "/images/mentors/2.png",
     "#C0DFB2"
   ),
   new Mentor(
     "Anjana Thachil",
     "Chartered Accountant",
-    "/images/mentors/3.webp",
+    "/images/mentors/3.png",
     "#DFD2B2"
   ),
   new Mentor(
-    "Harshin Valamary",
+    "Arif Omar",
     "Chartered Accountant",
-    "/images/mentors/2.webp",
+    "/images/mentors/4.png",
     "#B2DFDC"
   ),
   new Mentor(
-    "Anjaly Elsa Reji",
+    "Praveena Muralee C",
     "Chartered Accountant",
-    "/images/mentors/1.webp",
+    "/images/mentors/5.png",
     "#C0DFB2"
   ),
   new Mentor(
-    "Anjana Thachil",
-    "Chartered Accountant",
-    "/images/mentors/3.webp",
+    "Vishnu Kadengal",
+    "CA Finalist",
+    "/images/mentors/6.png",
     "#DFD2B2"
+  ),
+  new Mentor(
+    "Adhil M",
+    "Certified Management Accountant",
+    "/images/mentors/6.png",
+    "#B2DFDC"
   ),
 ];

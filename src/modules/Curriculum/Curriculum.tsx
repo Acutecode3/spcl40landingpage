@@ -13,8 +13,8 @@ const Curriculum = () => {
   return (
     <SectionLayouts id="journey" className={styles.section} providePadding>
       <SubHeading
-        whiteText="Meet the"
-        yellowText="mentors"
+        whiteText="Programme"
+        yellowText="Journey"
         stroke
         blackText=""
         size="30px"
@@ -22,8 +22,13 @@ const Curriculum = () => {
       <div className={cn(styles.content)}>
         <div className={styles.left}>
           <p className={styles.text}>
-            The programme is designed in such a way that you build a strong
-            learning community, just like you would on a physical campus!
+            {`In 'Special 40', a course where you'll learn real-world skills in
+            Accounting, Taxation, and GST. This program isn't just about
+            learning; it's about doing. You'll feel like you're part of a
+            learning group, just like in a real classroom.`}
+            <br />
+            <br />
+            {`Here's what you'll learn:`}
           </p>
           <div className="flex-col-mobile gap-1">
             <ApplyNow text="Enroll Now" />

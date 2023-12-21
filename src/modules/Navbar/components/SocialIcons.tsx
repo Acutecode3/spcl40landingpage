@@ -1,8 +1,8 @@
 import cn from "@/lib/cn";
 import Link from "next/link";
-import { FB, IG, LI } from "./Icons";
+import { FB, IG, YT } from "./Icons";
 import styles from "@/modules/Navbar/navbar.module.sass";
-import { fbLink, igLink, linkedInLink } from "@/lib/data/data";
+import { fbLink, igLink, ytLink } from "@/lib/data/data";
 
 const SocialIcons = () => {
   return (
@@ -24,12 +24,12 @@ const SocialIcons = () => {
         <IG />
       </Link>
       <Link
-        href={linkedInLink}
+        href={ytLink}
         className={styles.link_button}
         target="_blank"
         aria-label="Special40 LinkedIn"
       >
-        <LI />
+        <YT />
       </Link>
     </div>
   );

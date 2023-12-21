@@ -16,7 +16,7 @@ const MentorCard = (props: Props) => {
         style={{ backgroundColor: props.cardBg }}
         className={styles.image_container}
       >
-        <Image src={props.image} width={200} height={200} alt={props.name} />
+        <Image src={props.image} width={600} height={600} alt={props.name} />
       </div>
       <div className={styles.subtitle}>
         <p className={styles.name}>{props.name}</p>
