@@ -8,15 +8,14 @@ import {
 } from "@/modules/Testimonials/Carousel/Icons/Arrows";
 import Indicator from "@/modules/Testimonials/Carousel/Indicator";
 import MentorCard from "./MentorCard";
-import { mentors } from "../MeetTheMentors";
+import { mentors } from "@/lib/data/mentors";
 
 const Carousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
   const gap = 25; // 25px in css
-  const count = mentors.length; // number of videos
+  const count = mentors.length;
 
-  // each video width finding using useRef
   const [width, setWidth] = useState<number>(0);
   useEffect(() => {
     if (videoRef.current && width === 0) {
@@ -24,14 +23,17 @@ const Carousel = () => {
     }
   }, [width]);
 
-  // currently playing video index state. causes to scroll the div
-  const [currentlyPlaying, setCurrentlyPlaying] = useState<number>(0);
   const [scrolledVideo, setScrolledVideo] = useState<number>(0);
+  const getNext = () => (scrolledVideo == count - 1 ? 0 : scrolledVideo + 1);
+  const getBack = () => (scrolledVideo == 0 ? 0 : scrolledVideo - 1);
+
   const goLeft = (isMobile?: boolean) => {
     if (scrollRef.current && width !== 0) {
-      const next = scrolledVideo == 0 ? 0 : scrolledVideo - 1;
+      const next = getBack();
       let added = width + gap;
-      if (isMobile) added += 40;
+      if (isMobile && typeof window !== "undefined") {
+        added = window.outerWidth - 1;
+      }
       scrollRef.current.scrollTo({
         left: next * added,
         behavior: "smooth",
@@ -40,9 +42,11 @@ const Carousel = () => {
   };
   const goRight = (isMobile: boolean) => {
     if (scrollRef.current && width !== 0) {
-      const next = scrolledVideo == count - 1 ? 0 : scrolledVideo + 1;
+      const next = getNext();
       let added = width + gap;
-      if (isMobile) added += 40;
+      if (isMobile && typeof window !== "undefined") {
+        added = window.outerWidth + 1;
+      }
       scrollRef.current.scrollTo({
         left: next * added,
         behavior: "smooth",

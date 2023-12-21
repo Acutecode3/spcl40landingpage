@@ -18,7 +18,7 @@ const MentorCard = (props: Props) => {
       >
         <Image src={props.image} width={200} height={200} alt={props.name} />
       </div>
-      <div>
+      <div className={styles.subtitle}>
         <p className={styles.name}>{props.name}</p>
         <p className={styles.title}>{props.title}</p>
       </div>
