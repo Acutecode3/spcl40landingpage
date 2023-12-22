@@ -8,8 +8,14 @@ import Link from "next/link";
 const Page = () => {
   return (
     <ThanksPageLayout>
-      <section className={cn("provide_padding", styles.section)}>
+      <section
+        className={cn("provide_padding", styles.section, styles.thankYou)}
+      >
+        <div className={styles.shade}></div>
         <div className={styles.left}>
+          <br />
+          <br />
+          <br />
           <span className={styles.tag}>SPECIAL40</span>
           <div className={styles.sub_heading}>
             <h2 className="text-white">Thank you for your entry</h2>

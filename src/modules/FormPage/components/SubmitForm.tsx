@@ -8,6 +8,7 @@ import { toastError, toastSuccess } from "@/lib/toast";
 import { checkData } from "../helpers/checkData";
 import { useRouter, useSearchParams } from "next/navigation";
 import { curriculumLink } from "@/lib/data/data";
+import { eS, eT, sT } from "../helpers/errors";
 
 const handleDownload = () => {
   if (typeof window === "undefined") return;
@@ -29,10 +30,9 @@ const SubmitForm = () => {
   const searchParams = useSearchParams();
   const toDownload = searchParams.get("download_curriculum");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!isChecked)
-      return toastError("Please agree to the terms and conditions first!");
+    if (!isChecked) return toastError(eT);
     const details = {
       name: e.currentTarget.p_name.value,
       email: e.currentTarget.email.value,
@@ -43,19 +43,34 @@ const SubmitForm = () => {
     if (!checkData(details)) return;
 
     try {
-      // send details to backend
+      setButtonText("Enrolling you for Special40...");
 
-      // on success
-      router.push("/thank-you");
-      toastSuccess("Your details have been submitted!");
-      // if curriculum download is requested
-      if (toDownload) handleDownload();
+      // send details to api
+      const r = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(details),
+      });
+      if (!r.ok) toastError(eS[500]);
+      else {
+        const res: any = await r.json();
+        console.log(res);
+        if (res.success) {
+          // router.push("/thank-you");
+          toastSuccess(sT);
+          if (toDownload) handleDownload(); // if curriculum download is requested
+        } else {
+          toastError(res.message || eS[res.status]);
+        }
+      }
     } catch (err: any) {
-      toastError(err.message || "Something went wrong!");
+      console.error(err);
+      toastError(err.message);
     } finally {
       setButtonText("Enroll Now");
     }
   };
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.form_section}>

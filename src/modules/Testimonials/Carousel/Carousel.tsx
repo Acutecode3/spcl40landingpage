@@ -22,7 +22,7 @@ const Carousel = () => {
   }, [width]);
 
   // currently playing video index state. causes to scroll the div
-  const [currentlyPlaying, setCurrentlyPlaying] = useState<number>(0);
+  const [currentlyPlaying, setCurrentlyPlaying] = useState<number>(-1);
   const [scrolledVideo, setScrolledVideo] = useState<number>(0);
   const [stuck, setStuck] = useState({ stuck: false, prev: -1 });
   const getBack = () => (scrolledVideo === 0 ? 0 : scrolledVideo - 1);
