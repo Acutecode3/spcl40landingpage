@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
+import { sendPabblyWebhook } from "./helpers/pabbly";
 
-type EnrollData = {
+export type EnrollData = {
   name: string;
   email: string;
   phone: string;
@@ -36,23 +37,30 @@ export async function POST(req: NextRequest) {
     console.log(data);
 
     // sending data to the db
-    const query = `INSERT INTO ${table} VALUES ($1, $2, $3, $4, $5)`;
-    const result = await pool.query(query, [
+    const query = `INSERT INTO ${table} (name, email, phone, guardian_name, guardian_phone) VALUES ($1, $2, $3, $4, $5)`;
+    const result: any = await pool.query(query, [
       data.name,
       data.email,
       data.phone,
       data.guardian_name,
       data.guardian_phone,
     ]);
-    console.log(result);
 
-    return NextResponse.json({
-      status: 200,
-      success: true,
-      body: result,
-    });
+    sendPabblyWebhook(data);
+
+    if (result.rowCount === 1)
+      return NextResponse.json({
+        status: 200,
+        success: true,
+        body: result,
+      });
+    else
+      return err(
+        "Something went wrong while saving your details in the server.!",
+        500
+      );
   } catch (e) {
     console.log(e);
-    return err("Something went wrong while saving your details!");
+    return err("Something went wrong while saving your details!", 500);
   }
 }

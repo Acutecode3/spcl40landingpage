@@ -21,11 +21,13 @@ const handleDownload = () => {
   }, 2000);
 };
 
+const defaultText = "Enroll Now";
+
 const SubmitForm = () => {
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const toggleCheck = () => setIsChecked(!isChecked);
-  const [buttonText, setButtonText] = useState("Enroll Now");
+  const [buttonText, setButtonText] = useState(defaultText);
 
   const searchParams = useSearchParams();
   const toDownload = searchParams.get("download_curriculum");
@@ -56,7 +58,7 @@ const SubmitForm = () => {
         const res: any = await r.json();
         console.log(res);
         if (res.success) {
-          // router.push("/thank-you");
+          router.push("/thank-you");
           toastSuccess(sT);
           if (toDownload) handleDownload(); // if curriculum download is requested
         } else {
@@ -67,7 +69,7 @@ const SubmitForm = () => {
       console.error(err);
       toastError(err.message);
     } finally {
-      setButtonText("Enroll Now");
+      setButtonText(defaultText);
     }
   };
 
@@ -110,7 +112,11 @@ const SubmitForm = () => {
           <span className="text-blue underline">Terms & Conditions</span>
         </label>
       </div>
-      <button className={styles.submit} type="submit">
+      <button
+        className={styles.submit}
+        type="submit"
+        disabled={buttonText !== defaultText}
+      >
         {buttonText}
       </button>
     </form>

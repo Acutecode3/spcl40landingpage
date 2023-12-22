@@ -29,7 +29,7 @@ const About = () => {
       <article className={styles.face_behind}>
         <div className={cn(styles.portrait, "blue_card")}>
           <Image
-            src="/images/sreejith_kunyil.png"
+            src="/images/sreejith_kuniyil.png"
             alt="Picture of the author"
             width={700}
             height={574}

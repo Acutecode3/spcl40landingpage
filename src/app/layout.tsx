@@ -6,6 +6,8 @@ import { ChildrenProps } from "@/types/common.types";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import ActiveNavbarProvider from "@/contexts/ActiveNavbarContext";
+import { Suspense } from "react";
+import Analytics, { AnalyticsScript } from "@/components/Analytics";
 
 export const metadata: Metadata = {
   title: "Special 40 - Curated for corporates.",
@@ -17,10 +19,14 @@ export default function RootLayout(props: ChildrenProps) {
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <head>
         <Fonts />
+        <AnalyticsScript />
       </head>
       <body style={{ fontFamily: "'Outfit', sans-serif" }}>
         <Toaster position="top-right" reverseOrder={false} />
         <ActiveNavbarProvider>{props.children}</ActiveNavbarProvider>
+        <Suspense>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   );
