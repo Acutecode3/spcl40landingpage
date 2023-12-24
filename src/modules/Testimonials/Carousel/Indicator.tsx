@@ -1,4 +1,4 @@
-import styles from "./carousel.module.sass";
+import styles from "../testimonials.module.sass";
 
 type Props = {
   totalCount: number;

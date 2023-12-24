@@ -1,7 +1,7 @@
 "use client";
 
 import ReactPlayer from "react-player";
-import styles from "./carousel.module.sass";
+import styles from "../testimonials.module.sass";
 import { useEffect, useState } from "react";
 import PlayButton from "./Icons/PlayButton";
 import PauseButton from "./Icons/PauseButton";

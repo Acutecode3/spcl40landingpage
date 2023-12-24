@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import EachVideo from "./EachVideo";
 import Indicator from "./Indicator";
-import styles from "./carousel.module.sass";
+import styles from "../testimonials.module.sass";
 import { LeftArrow, RightArrow } from "./Icons/Arrows";
 import { testimonialVideos } from "@/lib/data/data";
 
