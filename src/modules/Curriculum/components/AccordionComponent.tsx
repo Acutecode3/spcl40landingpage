@@ -27,7 +27,7 @@ const AccordionComponent = (props: Props) => {
         <div
           className={cn(
             styles.accordion_content,
-            isOpen ? styles.open : styles.close
+            isOpen ? styles.open : styles.close,
           )}
         >
           <Content topics={props.topics} />

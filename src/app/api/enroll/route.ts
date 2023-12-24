@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
     else
       return err(
         "Something went wrong while saving your details in the server.!",
-        500
+        500,
       );
   } catch (e) {
     console.log(e);

@@ -6,7 +6,7 @@ class CardDetail {
   constructor(
     public title: string,
     public description: string,
-    public image: string
+    public image: string,
   ) {
     this.title = title;
     this.description = description;
@@ -19,22 +19,22 @@ const WhyAscentCards = () => {
     new CardDetail(
       "Practical Commerce Education",
       "Focuses on real-world skills in Accounting, Taxation, and Business.",
-      "/icons/why/education.png"
+      "/icons/why/education.png",
     ),
     new CardDetail(
       "Ideal for Aspiring Professionals",
       "Suitable for commerce graduates and ACCA/CMA students.",
-      "/icons/why/experience.png"
+      "/icons/why/experience.png",
     ),
     new CardDetail(
       "Expert-Led Training Sessions",
       "Taught by working Chartered Accountants and CAPITAIRE's qualified professionals.",
-      "/icons/why/professionals.png"
+      "/icons/why/professionals.png",
     ),
     new CardDetail(
       "Real Office Experience",
       " Opportunity to handle actual client files and accounts in a professional environment.",
-      "/icons/why/training.png"
+      "/icons/why/training.png",
     ),
   ];
   return (

@@ -12,7 +12,7 @@ const DownloadCurriculum = (props: Props) => {
       href="/apply-now?download_curriculum=true"
       className={cn(
         "flex-row items-center download_curriculum",
-        props.theme === "light" ? "download_light" : "download_dark"
+        props.theme === "light" ? "download_light" : "download_dark",
       )}
     >
       <Image
