@@ -17,21 +17,17 @@ const ProgrammeDetails = () => {
       <div className="flex-row items-center">
         <span className={styles.red_price}>INR {markedPrice}</span>
         <span className={styles.green_price}>INR {discountPrice}/-</span>
-        <span className={styles.grey_text}>{"(All Inclusive)"}</span>
+        <span className={styles.grey_text}>{"(excluding GST)"}</span>
       </div>
       <Separator />
-      <div className="flex-col-mobile gap-1">
+      <div className="flex-col gap-1">
         <span className={styles.small_heading}>
-          Admission Fee {"(Non-Refundable)"}
+          Fee Advance {"(Non-Refundable)"}
         </span>
         <span className={styles.price}>INR {admissionFee}/-</span>
-      </div>
-      <Separator />
-      <div className="flex-col-mobile gap-1">
         <span className={styles.small_heading}>
-          Tuition Fee {"(Non-Refundable)"}
+          * This payment is mandatory for reserving a slot in the programme.
         </span>
-        <span className={styles.price}>INR {tuitionFee}/-</span>
       </div>
       <Separator />
       {CardPoints.map((point, index) => (

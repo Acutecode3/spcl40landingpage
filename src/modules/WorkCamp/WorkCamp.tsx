@@ -4,11 +4,16 @@ import IntroVideo from "../HomeHero/components/IntroVideo";
 import ApplyNow from "../Navbar/components/ApplyNow";
 import { TwoWeeksWorkVideoLink } from "@/lib/data/data";
 import SectionLayouts from "@/components/SectionLayouts";
+import Tick2 from "./components/Tick2";
 
 const WorkCamp = () => {
   return (
     <SectionLayouts className={styles.section} id="work-camp" providePadding>
       <div className={styles.section1}>
+        <div className={styles.bonus}>
+          <Tick2 />
+          <span>Bonus</span>
+        </div>
         <SubHeading
           stroke
           size="26px"

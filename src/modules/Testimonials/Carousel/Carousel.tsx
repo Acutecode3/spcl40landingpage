@@ -37,7 +37,7 @@ const Carousel = () => {
       }
 
       if (stuck.prev === next) {
-        setScrolledVideo(getBack() - 1);
+        setScrolledVideo(next - 1);
         next -= 1;
       }
       setStuck({ ...stuck, prev: next });
@@ -57,7 +57,7 @@ const Carousel = () => {
         added = window.outerWidth + 2;
       }
       if (stuck.prev === next) {
-        setScrolledVideo(getNext() + 1);
+        setScrolledVideo(next + 1);
         next += 1;
       }
       setStuck({ ...stuck, prev: next });

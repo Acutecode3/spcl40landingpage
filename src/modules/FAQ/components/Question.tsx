@@ -6,7 +6,7 @@ import Check from "./Check";
 import { FaqType } from "@/lib/data/faqs";
 
 const Question = (props: FaqType) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(props.open || false);
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div className={styles.question}>

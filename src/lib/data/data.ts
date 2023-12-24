@@ -14,9 +14,9 @@ export const TwoWeeksWorkVideoLink =
 // faqs.ts to update faqs
 
 export const markedPrice = "75,000";
-export const discountPrice = "47,200";
+export const discountPrice = "40,00";
 export const admissionFee = "5,000";
-export const tuitionFee = "47,200";
+export const tuitionFee = "40,00";
 
 export const fbLink = "https://www.facebook.com/specialforty";
 export const igLink = "https://www.instagram.com/special40_capitaire/";
