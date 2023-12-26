@@ -1,3 +1,5 @@
+import { admissionFee, tuitionFee } from "./data";
+
 export type FaqType = {
   q: string;
   a: string;
@@ -7,7 +9,7 @@ export type FaqType = {
 export const faqs: FaqType[] = [
   {
     q: "What is the fee for Special 40's Ascent?",
-    a: "The total fee for the two-month programme is INR 40,000 plus GST, which includes an admission fee of INR 5,000.",
+    a: `The total fee for the two-month programme is INR ${tuitionFee} plus GST, which includes an admission fee of INR ${admissionFee}`,
     open: true,
   },
   {
