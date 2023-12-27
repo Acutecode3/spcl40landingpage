@@ -28,11 +28,19 @@ const SubmitForm = () => {
   const [isChecked, setIsChecked] = useState(false);
   const toggleCheck = () => setIsChecked(!isChecked);
   const [buttonText, setButtonText] = useState(defaultText);
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "error" | "success"
+  >("idle");
 
   const searchParams = useSearchParams();
   const toDownload = searchParams.get("download_curriculum");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const itIsError = (message: string) => {
+      setStatus("error");
+      toastError(message);
+    };
+
     e.preventDefault();
     if (!isChecked) return toastError(eT);
     const details = {
@@ -46,28 +54,30 @@ const SubmitForm = () => {
 
     try {
       setButtonText("Enrolling you for Special40...");
-
+      setStatus("loading");
       // send details to api
       const r = await fetch("/api/enroll", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(details),
       });
-      if (!r.ok) toastError(eS[500]);
+      if (!r.ok) itIsError(eS[500]);
       else {
+        // if res is ok
         const res: any = await r.json();
         console.log(res);
         if (res.success) {
+          setStatus("success");
           router.push("/thank-you");
           toastSuccess(sT);
           if (toDownload) handleDownload(); // if curriculum download is requested
         } else {
-          toastError(res.message || eS[res.status]);
+          itIsError(res.message || eS[res.status]);
         }
       }
     } catch (err: any) {
       console.error(err);
-      toastError(err.message);
+      itIsError(err.message);
     } finally {
       setButtonText(defaultText);
     }
@@ -113,9 +123,14 @@ const SubmitForm = () => {
         </label>
       </div>
       <button
-        className={styles.submit}
+        className={cn(
+          styles.submit,
+          status === "loading" || status === "success"
+            ? styles.disabled
+            : styles.enabled
+        )}
         type="submit"
-        disabled={buttonText !== defaultText}
+        disabled={status === "success" || status === "loading"}
       >
         {buttonText}
       </button>

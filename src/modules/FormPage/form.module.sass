@@ -165,8 +165,6 @@
     align-items: center
 
 .submit
-    background: $clr-accent
-    color: white
     font-size: 16px
     line-height: 150%
     width: 100%
@@ -175,5 +173,13 @@
     border-radius: 12px
     cursor: pointer
     transition: $transition-medium
+
+.disabled
+    background-color: $clr-gray-shade
+    color: white
+
+.enabled
+    background: $clr-accent
+    color: white
     &:hover
         background: $clr-accent-light

@@ -26,7 +26,7 @@ const SectionLayouts = (props: Props) => {
       },
       {
         threshold: 0.5,
-      },
+      }
     );
 
     if (sectionRef.current) {
@@ -45,7 +45,7 @@ const SectionLayouts = (props: Props) => {
     <section
       className={cn(
         props.providePadding ? "provide_padding" : "",
-        props.className || "",
+        props.className || ""
       )}
       id={props.id}
       onMouseEnter={() => setActiveSection(props.id)}

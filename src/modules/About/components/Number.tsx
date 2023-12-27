@@ -39,7 +39,7 @@ const Number = (props: Props) => {
             startCounting();
         });
       },
-      { root: null, rootMargin: "0px", threshold: 0.5 },
+      { root: null, rootMargin: "0px", threshold: 0.5 }
     );
 
     if (countingRef.current) {
