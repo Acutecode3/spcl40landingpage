@@ -2,7 +2,6 @@
 
 import { GTM_ID, pageview } from "@/lib/gtm";
 import { usePathname, useSearchParams } from "next/navigation";
-import Script from "next/script";
 import { useEffect } from "react";
 
 export default function Analytics() {
@@ -28,9 +27,8 @@ export default function Analytics() {
 }
 
 export const AnalyticsScript = () => (
-  <Script
+  <script
     id="gtm-script"
-    strategy="afterInteractive"
     dangerouslySetInnerHTML={{
       __html: `
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
