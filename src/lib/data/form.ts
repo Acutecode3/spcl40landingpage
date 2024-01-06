@@ -9,3 +9,5 @@ export const captions = [
 ];
 
 export const referrals = ["Social Media", "Ads", "Referral", "Other"];
+
+export const ages = ["21", "22", "23", "24", "25", "26", "27"];

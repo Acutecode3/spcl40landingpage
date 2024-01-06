@@ -7,16 +7,15 @@ export type EnrollData = {
   email: string;
   phone: string;
   age: number;
-  dob: string;
   guardian_name: string;
   guardian_phone: string;
   state: string;
   district: string;
   education_level: string;
   career_goal: string;
-  start_training_by: string;
+  come_to_know: string;
   previous_job_experience: string;
-  financial_assistance: string;
+  why_enroll: string;
 };
 
 const err = (message: string, status?: number) =>
@@ -57,11 +56,11 @@ export async function POST(req: NextRequest) {
     // sending data to the db
     const query = `
   INSERT INTO ${table} (
-    name, email, phone, age, dob,
+    name, email, phone, age,
     guardian_name, guardian_phone, state, district,
     education_level, career_goal, start_training_by,
     previous_job_experience, financial_assistance
-  ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+  ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
 `;
 
     const result: any = await pool.query(query, [
@@ -69,16 +68,15 @@ export async function POST(req: NextRequest) {
       data.email,
       data.phone,
       data.age,
-      data.dob,
       data.guardian_name,
       data.guardian_phone,
       data.state,
       data.district,
       data.education_level,
       data.career_goal,
-      data.start_training_by,
+      data.come_to_know,
       data.previous_job_experience,
-      data.financial_assistance,
+      data.why_enroll,
     ]);
 
     sendPabblyWebhook(data);

@@ -12,14 +12,14 @@ const ThirdPanel = () => {
   const handleCG = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
     setForm3Data({ ...form3Data, career_goal: e.target.value });
 
-  const handleSTB = (e: React.ChangeEvent<HTMLSelectElement>) =>
-    setForm3Data({ ...form3Data, start_training_by: e.target.value });
+  const handleCTK = (e: React.ChangeEvent<HTMLSelectElement>) =>
+    setForm3Data({ ...form3Data, come_to_know: e.target.value });
 
   const handlePJE = (e: React.ChangeEvent<HTMLSelectElement>) =>
     setForm3Data({ ...form3Data, previous_job_experience: e.target.value });
 
-  const handleFA = (e: string) =>
-    setForm3Data({ ...form3Data, financial_assistance: e });
+  const handleWE = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
+    setForm3Data({ ...form3Data, why_enroll: e.target.value });
 
   return (
     <div className={cn(styles.forms)}>
@@ -35,14 +35,14 @@ const ThirdPanel = () => {
         />
       </div>
       <div className={styles.form_section}>
-        <label htmlFor="start_training_by">
-          When do you plan to start your training with us?*
+        <label htmlFor="come_to_know">
+          How did you come to know about Special40?*
         </label>
         <select
-          name="start_training_by"
-          id="start_training_by"
-          onChange={handleSTB}
-          value={form3Data.start_training_by}
+          name="come_to_know"
+          id="come_to_know"
+          onChange={handleCTK}
+          value={form3Data.come_to_know}
         >
           <option value="">Select an option</option>
           {referrals &&
@@ -73,33 +73,15 @@ const ThirdPanel = () => {
         </select>
       </div>
       <div className={styles.form_section}>
-        <label htmlFor="financial_assistance">
-          Would you require financial assistance or payment plans for the
-          program?*
+        <label htmlFor="why_enroll">
+          Explain why you wish to enroll in the special 40 program*
         </label>
-        <div className={styles.row_container} id="financial_assistance">
-          {options.map((option) => {
-            return (
-              <div
-                key={option}
-                className={styles.row_container}
-                onClick={() => {
-                  setSelectedOption(option);
-                  handleFA(option);
-                }}
-              >
-                <span
-                  id="maybe_fa"
-                  className={cn(
-                    styles.radio,
-                    option === selectedOption ? styles.selected : ""
-                  )}
-                />
-                <label htmlFor="maybe_fa">{option}</label>
-              </div>
-            );
-          })}
-        </div>
+        <textarea
+          placeholder="(Note: Students who have filled this out have a higher chance of getting selected.)"
+          id="why_enroll"
+          onChange={handleWE}
+          value={form3Data.why_enroll}
+        />
       </div>
     </div>
   );

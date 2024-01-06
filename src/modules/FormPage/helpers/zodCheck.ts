@@ -11,8 +11,9 @@ const sch1 = z.object({
   name: z.string().min(2, { message: "Name is too short" }),
   email: z.string().email({ message: "Invalid email" }),
   phone: z.string().min(10, { message: "Invalid phone number" }),
-  age: z.number().min(18, { message: "You must be 18 or older" }),
-  dob: z.string().min(10, { message: "Invalid date of birth" }),
+  age: z
+    .number()
+    .min(18, { message: "You must be in the age category of 21-27" }),
   terms: z.boolean().refine((val) => val === true, {
     message: "You must accept the terms & conditions",
   }),
@@ -40,12 +41,16 @@ export function checkData2(data: any) {
 
 const sch3 = z.object({
   career_goal: z.string().min(2, { message: "Write a better career goal" }),
-  start_training_by: z.string().min(2, { message: "Invalid start date" }),
+  come_to_know: z.string().min(2, {
+    message:
+      "Specify the correct option that describes how you learned about Special40",
+  }),
   previous_job_experience: z.string().min(2, {
     message: "Invalid previous job experience",
   }),
-  financial_assistance: z.string().min(2, {
-    message: "Chose a valid financial assistance option",
+  why_enroll: z.string().min(10, {
+    message:
+      "Please provide a justification for your desire to enroll in Special40",
   }),
 });
 

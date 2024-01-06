@@ -3,6 +3,7 @@ import styles from "../../form.module.sass";
 import cn from "@/lib/cn";
 import Tick from "../Tick";
 import { useFormContext } from "../../FormContext";
+import { ages } from "@/lib/data/form";
 
 const FirstPanel = () => {
   const { form1Data, setForm1Data } = useFormContext();
@@ -21,11 +22,8 @@ const FirstPanel = () => {
   const handlePhone = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm1Data({ ...form1Data, phone: e.target.value });
 
-  const handleAge = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleAge = (e: React.ChangeEvent<HTMLSelectElement>) =>
     setForm1Data({ ...form1Data, age: Number(e.target.value) });
-
-  const handleDOB = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setForm1Data({ ...form1Data, dob: e.target.value });
 
   return (
     <div className={cn(styles.forms)}>
@@ -60,23 +58,24 @@ const FirstPanel = () => {
       </div>
       <div className={styles.row_container}>
         <div className={styles.form_section}>
-          <label htmlFor="age">Age*</label>
-          <input
-            type="text"
+          <label htmlFor="age">
+            Age*{" "}
+            <span className={styles.red}>(Age limit for entry is 21-27.)</span>
+          </label>
+          <select
+            name="age"
             id="age"
-            inputMode="numeric"
             onChange={handleAge}
-            value={form1Data.age === 0 ? "" : form1Data.age}
-          />
-        </div>
-        <div className={styles.form_section}>
-          <label htmlFor="dob">DOB*</label>
-          <input
-            type="date"
-            id="dob"
-            onChange={handleDOB}
-            value={form1Data.dob}
-          />
+            value={form1Data.age}
+          >
+            <option value="">Select your age.</option>
+            {ages &&
+              ages.map((age) => (
+                <option key={age} value={age}>
+                  {age}
+                </option>
+              ))}
+          </select>
         </div>
       </div>
       <div className={styles.form_section_check}>

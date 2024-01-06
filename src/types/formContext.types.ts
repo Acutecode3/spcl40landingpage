@@ -3,7 +3,6 @@ export type Form1Type = {
   email: string;
   phone: string;
   age: number;
-  dob: string;
   terms: boolean;
 };
 export const DefForm1: Form1Type = {
@@ -11,7 +10,6 @@ export const DefForm1: Form1Type = {
   email: "",
   phone: "",
   age: 0,
-  dob: "",
   terms: false,
 };
 
@@ -32,16 +30,16 @@ export const DefForm2: Form2Type = {
 
 export type Form3Type = {
   career_goal: string;
-  start_training_by: string;
+  come_to_know: string;
   previous_job_experience: string;
-  financial_assistance: string;
+  why_enroll: string;
 };
 
 export const DefForm3: Form3Type = {
   career_goal: "",
-  start_training_by: "",
+  come_to_know: "",
   previous_job_experience: "",
-  financial_assistance: "No",
+  why_enroll: "",
 };
 
 export type pagesType = 2;
