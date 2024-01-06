@@ -14,16 +14,16 @@ const SecondPanel = () => {
     setDistricts(districts);
   };
   return (
-    <div className={cn(styles.forms)}>
+    <form className={cn(styles.forms)}>
       <div className={styles.form_section}>
-        <label htmlFor="g_name">Guardian{"'"}s Name*</label>
-        <input type="text" id="g_name" />
+        <label htmlFor="guardian_name">Guardian{"'"}s Name*</label>
+        <input type="text" id="guardian_name" />
       </div>
       <div className={styles.form_section}>
-        <label htmlFor="g_phone">Guardian{"'"}s Phone Number*</label>
+        <label htmlFor="guardian_phone">Guardian{"'"}s Phone Number*</label>
         <input
           type="text"
-          id="g_phone"
+          id="guardian_phone"
           inputMode="numeric"
           defaultValue="+91 "
         />
@@ -55,8 +55,8 @@ const SecondPanel = () => {
         </div>
       </div>
       <div className={styles.form_section}>
-        <label htmlFor="education">Education</label>
-        <select name="education" id="education">
+        <label htmlFor="education_level">Education</label>
+        <select name="education_level" id="education_level">
           <option value="">Please chose your education level</option>
           {EducationLevels &&
             EducationLevels.map((lvl) => (
@@ -66,7 +66,7 @@ const SecondPanel = () => {
             ))}
         </select>
       </div>
-    </div>
+    </form>
   );
 };
 

@@ -44,4 +44,4 @@ export const DefForm3: Form3Type = {
   financial_assistance: "maybe",
 };
 
-export type pagesType = 0 | 1 | 2;
+export type pagesType = 2;

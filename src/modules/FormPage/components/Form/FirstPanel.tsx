@@ -8,9 +8,9 @@ const FirstPanel = () => {
   const toggleCheck = () => setIsChecked(!isChecked);
 
   return (
-    <div className={cn(styles.forms)}>
+    <form className={cn(styles.forms)}>
       <div className={styles.form_section}>
-        <label htmlFor="name">Name*</label>
+        <label htmlFor="p_name">Name*</label>
         <input type="text" id="p_name" />
       </div>
       <div className={styles.form_section}>
@@ -43,7 +43,7 @@ const FirstPanel = () => {
           <span className="text-blue underline">Terms & Conditions</span>
         </label>
       </div>
-    </div>
+    </form>
   );
 };
 
