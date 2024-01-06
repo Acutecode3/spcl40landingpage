@@ -9,9 +9,19 @@ import { useFormContext } from "../FormContext";
 import { captions } from "@/lib/data/form";
 import Left from "./Arrows/Left";
 import Right from "./Arrows/Right";
+import { useSearchParams } from "next/navigation";
 
 const SubmitForm = () => {
-  const { currentForm, goRight, goLeft, maxVisitableForm } = useFormContext();
+  const {
+    currentForm,
+    goRight,
+    goLeft,
+    maxVisitableForm,
+    handleClicked,
+    buttonText,
+  } = useFormContext();
+  const searchParams = useSearchParams();
+  const toDownload = searchParams.get("download_curriculum") === "true";
   return (
     <div className={styles.form_container}>
       <div
@@ -35,7 +45,11 @@ const SubmitForm = () => {
           </div>
         </div>
         <div className="flex flex-row">
-          <button onClick={() => goLeft()}>
+          <button
+            onClick={() => goLeft()}
+            className={currentForm === 0 ? styles.hideLittle : ""}
+            disabled={currentForm === 0}
+          >
             <Left />
           </button>
           <button
@@ -53,9 +67,11 @@ const SubmitForm = () => {
       <button
         className={cn(styles.submit, styles.enabled)}
         type="submit"
-        onClick={() => goRight()}
+        onClick={() => {
+          handleClicked(toDownload);
+        }}
       >
-        {currentForm < 2 ? "Next Step" : "Submit entry"}
+        {buttonText}
       </button>
     </div>
   );

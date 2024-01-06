@@ -34,14 +34,14 @@ export type Form3Type = {
   career_goal: string;
   start_training_by: string;
   previous_job_experience: string;
-  financial_assistance: "yes" | "no" | "maybe";
+  financial_assistance: string;
 };
 
 export const DefForm3: Form3Type = {
   career_goal: "",
   start_training_by: "",
   previous_job_experience: "",
-  financial_assistance: "maybe",
+  financial_assistance: "No",
 };
 
 export type pagesType = 2;

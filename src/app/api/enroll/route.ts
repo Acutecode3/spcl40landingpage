@@ -6,8 +6,17 @@ export type EnrollData = {
   name: string;
   email: string;
   phone: string;
+  age: number;
+  dob: string;
   guardian_name: string;
   guardian_phone: string;
+  state: string;
+  district: string;
+  education_level: string;
+  career_goal: string;
+  start_training_by: string;
+  previous_job_experience: string;
+  financial_assistance: string;
 };
 
 const err = (message: string, status?: number) =>
@@ -37,13 +46,39 @@ export async function POST(req: NextRequest) {
     console.log(data);
 
     // sending data to the db
-    const query = `INSERT INTO ${table} (name, email, phone, guardian_name, guardian_phone) VALUES ($1, $2, $3, $4, $5)`;
+    // const query = `INSERT INTO ${table} (name, email, phone, guardian_name, guardian_phone) VALUES ($1, $2, $3, $4, $5)`;
+    // const result: any = await pool.query(query, [
+    //   data.name,
+    //   data.email,
+    //   data.phone,
+    //   data.guardian_name,
+    //   data.guardian_phone,
+    // ]);
+    // sending data to the db
+    const query = `
+  INSERT INTO ${table} (
+    name, email, phone, age, dob,
+    guardian_name, guardian_phone, state, district,
+    education_level, career_goal, start_training_by,
+    previous_job_experience, financial_assistance
+  ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+`;
+
     const result: any = await pool.query(query, [
       data.name,
       data.email,
       data.phone,
+      data.age,
+      data.dob,
       data.guardian_name,
       data.guardian_phone,
+      data.state,
+      data.district,
+      data.education_level,
+      data.career_goal,
+      data.start_training_by,
+      data.previous_job_experience,
+      data.financial_assistance,
     ]);
 
     sendPabblyWebhook(data);
