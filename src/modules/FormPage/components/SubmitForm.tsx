@@ -5,7 +5,7 @@ import styles from "../form.module.sass";
 import cn from "@/lib/cn";
 import SecondPanel from "./Form/SecondPanel";
 import ThirdPanel from "./Form/ThirdPanel";
-import { useFormContext } from "../FormContext";
+import { loadingText, useFormContext } from "../FormContext";
 import { captions } from "@/lib/data/form";
 import Left from "./Arrows/Left";
 import Right from "./Arrows/Right";
@@ -65,11 +65,12 @@ const SubmitForm = () => {
       {currentForm === 1 && <SecondPanel />}
       {currentForm === 2 && <ThirdPanel />}
       <button
-        className={cn(styles.submit, styles.enabled)}
         type="submit"
+        className={cn(styles.submit, styles.enabled)}
         onClick={() => {
           handleClicked(toDownload);
         }}
+        disabled={buttonText === loadingText}
       >
         {buttonText}
       </button>

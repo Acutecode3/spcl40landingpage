@@ -1,15 +1,4 @@
-export const EducationLevels = [
-  "Elementary",
-  "Middle",
-  "High",
-  "College",
-  "Graduate",
-  "Post Graduate",
-  "Doctorate",
-  "Other",
-];
-
-export const trainingStartTime = ["00:00", "00:30", "01:00", "01:30"];
+export const EducationLevels = ["B. Com", "M. Com", "ACCA", "CMA", "Other"];
 
 export const prevJobExperience = ["Yes", "No"];
 
@@ -18,3 +7,5 @@ export const captions = [
   "Step 2 - Almost there, one step more",
   "Step 3 - Let's check your eligibility",
 ];
+
+export const referrals = ["Social Media", "Ads", "Referral", "Other"];

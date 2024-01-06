@@ -32,6 +32,7 @@ type FormContextType = {
 };
 
 const defaultText = "Next Step";
+export const loadingText = "Enrolling you for Special40...";
 const defType = {
   maxVisitableForm: 0,
   currentForm: 0,
@@ -99,7 +100,7 @@ export function FormProvider(props: ChildrenProps) {
         const details = { ...form1Data, ...form2Data, ...form3Data };
         // submit data
         try {
-          setButtonText("Enrolling you for Special40...");
+          setButtonText(loadingText);
           const r = await fetch("/api/enroll", {
             method: "POST",
             headers: { "Content-Type": "application/json" },

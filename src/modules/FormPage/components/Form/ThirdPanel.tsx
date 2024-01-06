@@ -1,6 +1,6 @@
 import cn from "@/lib/cn";
 import { useState } from "react";
-import { prevJobExperience, trainingStartTime } from "@/lib/data/form";
+import { prevJobExperience, referrals } from "@/lib/data/form";
 import styles from "../../form.module.sass";
 import { useFormContext } from "../../FormContext";
 
@@ -45,8 +45,8 @@ const ThirdPanel = () => {
           value={form3Data.start_training_by}
         >
           <option value="">Select an option</option>
-          {trainingStartTime &&
-            trainingStartTime.map((time) => (
+          {referrals &&
+            referrals.map((time) => (
               <option key={time} value={time}>
                 {time}
               </option>
