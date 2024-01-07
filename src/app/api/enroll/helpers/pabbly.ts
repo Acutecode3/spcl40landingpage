@@ -13,9 +13,9 @@ export const sendPabblyWebhook = async (data: EnrollData) => {
   formData.append("district", data.district);
   formData.append("education_level", data.education_level);
   formData.append("career_goal", data.career_goal);
-  formData.append("start_training_by", data.come_to_know);
+  formData.append("come_to_know", data.come_to_know);
   formData.append("previous_job_experience", data.previous_job_experience);
-  formData.append("financial_assistance", data.why_enroll);
+  formData.append("why_enroll", data.why_enroll);
 
   if (!PABBLY_WEBHOOK_URL) {
     console.error("PABBLY_WEBHOOK_URL not found");

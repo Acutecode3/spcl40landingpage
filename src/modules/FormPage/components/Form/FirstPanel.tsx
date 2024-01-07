@@ -60,7 +60,7 @@ const FirstPanel = () => {
         <div className={styles.form_section}>
           <label htmlFor="age">
             Age*{" "}
-            <span className={styles.red}>(Age limit for entry is 21-27.)</span>
+            <span className={styles.red}>(Age limit for entry is 21-27)</span>
           </label>
           <select
             name="age"

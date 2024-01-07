@@ -58,8 +58,8 @@ export async function POST(req: NextRequest) {
   INSERT INTO ${table} (
     name, email, phone, age,
     guardian_name, guardian_phone, state, district,
-    education_level, career_goal, start_training_by,
-    previous_job_experience, financial_assistance
+    education_level, career_goal, come_to_know,
+    previous_job_experience, why_enroll
   ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
 `;
 

@@ -115,13 +115,13 @@ export function FormProvider(props: ChildrenProps) {
               router.push("/thank-you");
               toastSuccess(sT);
               if (toDownload) handleDownload(); // if curriculum download is requested
+              return;
             } else toastError(res.message || eS[res.status]);
           }
         } catch (err: any) {
           console.error(err);
           toastError(err.message);
-        } finally {
-          setButtonText(defaultText);
+          setButtonText("Submit Now");
         }
       }
     }
