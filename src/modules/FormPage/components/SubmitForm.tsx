@@ -1,15 +1,16 @@
 "use client";
 
-import FirstPanel from "./Form/FirstPanel";
-import styles from "../form.module.sass";
+import dynamic from "next/dynamic";
+import { useSearchParams } from "next/navigation";
 import cn from "@/lib/cn";
+import { captions } from "@/lib/data/form";
+import styles from "../form.module.sass";
+import FirstPanel from "./Form/FirstPanel";
 import SecondPanel from "./Form/SecondPanel";
 import ThirdPanel from "./Form/ThirdPanel";
 import { loadingText, useFormContext } from "../FormContext";
-import { captions } from "@/lib/data/form";
 import Left from "./Arrows/Left";
 import Right from "./Arrows/Right";
-import { useSearchParams } from "next/navigation";
 
 const SubmitForm = () => {
   const {
@@ -78,4 +79,5 @@ const SubmitForm = () => {
   );
 };
 
-export default SubmitForm;
+// export default SubmitForm;
+export default dynamic(() => Promise.resolve(SubmitForm), { ssr: false });

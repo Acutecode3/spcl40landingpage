@@ -3,8 +3,10 @@ import styles from "../form.module.sass";
 import cn from "@/lib/cn";
 import TimerIcon from "./TimerIcon";
 import CountDown from "./CountDown";
+import { formatDate } from "../helpers/formatDate";
 
 const LeftSide = () => {
+  const date = new Date(process.env.NEXT_PUBLIC_COUNTDOWN_DATE || "");
   return (
     <div className={styles.left}>
       <span className={styles.tag}>SPECIAL40</span>
@@ -24,7 +26,9 @@ const LeftSide = () => {
       </div>
       <div className={cn(styles.deadline, "flex-col")}>
         <span className={styles.dt}>Round 2 Deadline.</span>
-        <span className={styles.dh}>January 2024</span>
+        <span className={styles.dh}>
+          {`${formatDate(date)}` || "January 2024"}
+        </span>
       </div>
     </div>
   );
